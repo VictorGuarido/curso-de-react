@@ -3,6 +3,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import {v4} from "uuid"; 
 import Title from "./components/Title";
+import Bottom from './components/Bottom';
 
 function App() {
 
@@ -67,7 +68,7 @@ function App() {
     }
 
     return (
-        <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
+        <div className="w-screen min-h-screen bg-slate-500 flex justify-center p-6">
             <div className="w-[500px] space-y-4">
                 <Title>
                     Gerenciador de Tarefas
@@ -78,6 +79,8 @@ function App() {
                     tasksProps={tasksS}
                     onTaskClick={onTaskClick}
                     onClickDeleteTask={onClickDeleteTask}/>
+                
+                <Bottom />
             </div>
         </div>
     )
