@@ -1,4 +1,4 @@
-import { ChevronRightIcon, TrashIcon } from "lucide-react";
+import { CheckIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -19,8 +19,10 @@ function Tasks({tasksProps, onTaskClick, onClickDeleteTask}) {
                     {/* Adiciona uma classe condicional para riscar o texto se a tarefa estiver concluída */}
                     <button 
                         onClick={() => onTaskClick(task.id)}
-                        className={`${task.isCompleted && 'line-through'} bg-slate-400 text-left w-full text-white p-2 rounded-md`}>
-
+                        className={`${task.isCompleted && 'line-through'} flex items-center gap-2 bg-slate-400 text-left w-full text-white p-2 rounded-md`}>
+                        
+                        {/* {task.isCompleted ? '✅ ' : '❌ '} */}
+                        {task.isCompleted && <CheckIcon />}
                         {task.title}
                     </button>
                     
